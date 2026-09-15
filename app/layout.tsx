@@ -4,6 +4,7 @@ import {
   Geist_Mono,
   Cal_Sans,
   Petit_Formal_Script,
+  LINE_Seed_JP,
 } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/Navbar';
@@ -31,6 +32,12 @@ const petitFormalScript = Petit_Formal_Script({
   weight: '400',
 });
 
+const lineSeedJP = LINE_Seed_JP({
+  variable: '--font-line-seed-jp',
+  subsets: ['latin'],
+  weight: '400',
+});
+
 export const metadata: Metadata = {
   title: 'Shot by Bellzzz',
   description: 'Photographer',
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${calSans.variable} ${petitFormalScript.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${calSans.variable} ${petitFormalScript.variable} ${lineSeedJP.variable} antialiased`}
       >
         <Navbar />
         {children}
