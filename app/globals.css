@@ -35,6 +35,22 @@ body.transition-active {
   font-style: normal;
 }
 
+@utility text-massive1 {
+  font-size: 4rem;
+}
+
+@utility text-massive2 {
+  font-size: 4.5rem;
+}
+
+@utility leading-massive1 {
+  line-height: 4.5rem;
+}
+
+@utility leading-massive2 {
+  line-height: 5rem;
+}
+
 @media (width <= 30rem) {
   .navbar-large-button {
     display: none;
@@ -45,4 +61,24 @@ body.transition-active {
   .navbar-mobile-button {
     display: none;
   }
+}
+
+.hero-image-container {
+  perspective: 1000px;
+}
+
+.hero-image-parent {
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: visible;
+}
+
+.hero-bio ::selection {
+  color: rgb(255, 248, 111);
+  background: black;
+}
+
+.hero-bio-text-container {
+  overflow-y: hidden;
 }

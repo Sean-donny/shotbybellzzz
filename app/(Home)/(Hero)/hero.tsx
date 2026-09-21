@@ -11,6 +11,7 @@ import {
 } from '@/app/Hooks/useTypingLoop';
 
 import TypingText from '@/app/components/TypingText';
+import InstantFilm from '@/app/components/InstantFilm';
 
 /**
  * Visual words used by the animation.
@@ -75,43 +76,45 @@ const Hero = () => {
      * the visitor's reduced-motion preference.
      */
     <MotionConfig reducedMotion="user">
-      <div className="flex min-h-screen w-full items-center justify-around bg-teal-300">
-        <div
-          className="flex max-w-full items-center justify-center bg-pink-400 p-20"
-          data-animation={animation.mode}
-          data-phase={animation.phase}
-          data-status={animation.status}
-          data-active={animation.isActive}
-        >
-          <h1 className="text-4xl font-line-jp font-bold">
-            {/*
-             * Semantic content.
-             *
-             * This is the representation consumed by screen readers and
-             * remains stable regardless of the visual animation.
-             */}
-            <span className="sr-only">{ACCESSIBLE_BIO}</span>
-
-            {/*
-             * Entirely decorative visual representation.
-             *
-             * Keeping it aria-hidden prevents assistive technology from
-             * announcing every intermediate typing/deletion state.
-             */}
-            <span aria-hidden="true">
-              <span>Bellzzz is a </span>
-
-              <TypingText
-                text={currentWord}
-                reservationText={DEFAULT_WORD}
-                showCursor={animationsEnabled && animation.isActive}
-                blinkCursor={animationsEnabled && animation.phase === 'pause'}
-              />
-            </span>
-          </h1>
+      <div className="hero-container w-full h-auto lg:h-full p-7 flex flex-col md:flex-row overflow-clip bg-teal-300">
+        <div className="hero-bio-container grow md:w-3/5 md:flex-none bg-green-400">
+          <div
+            className="hero-bio-text-container h-full w-auto flex items-center-safe overflow-clip bg-pink-500"
+            data-animation={animation.mode}
+            data-phase={animation.phase}
+            data-status={animation.status}
+            data-active={animation.isActive}
+          >
+            <h1 className="text-4xl tracking-wide font-cal-sans font-semibold py-2 lg:pb-5 lg:pl-5 lg:text-massive2 lg:leading-massive2">
+              {/*
+               * Semantic content.
+               *
+               * This is the representation consumed by screen readers and
+               * remains stable regardless of the visual animation.
+               */}
+              <span className="sr-only">{ACCESSIBLE_BIO}</span>
+              {/*
+               * Entirely decorative visual representation.
+               *
+               * Keeping it aria-hidden prevents assistive technology from
+               * announcing every intermediate typing/deletion state.
+               */}
+              <span aria-hidden="true">
+                <span>Bellzzz is a </span>
+                <TypingText
+                  text={currentWord}
+                  reservationText={DEFAULT_WORD}
+                  showCursor={animationsEnabled && animation.isActive}
+                  blinkCursor={animationsEnabled && animation.phase === 'pause'}
+                />
+                <br />
+                <span>based in England, UK.</span>
+              </span>
+            </h1>
+          </div>
         </div>
 
-        <div>
+        <div className="hero-image-container grow md:w-2/5 md:flex-none p-2">
           <figure
             ref={ref}
             className="
