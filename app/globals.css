@@ -17,6 +17,10 @@ body.transition-active {
   overflow: hidden;
 }
 
+:root {
+  --header-height: 3.5rem;
+}
+
 @utility font-cal-sans {
   font-family: 'Cal Sans', sans-serif;
   font-weight: 400;
