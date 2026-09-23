@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import HeroImage from '@/public/bellzzz_with_the_cam.jpg';
-import Hero from './(Home)/(Hero)/hero';
+import Hero from './(Home)/(Hero)/Hero';
 import Projects from './(Home)/(Projects)/Projects';
 import Gallery from './(Home)/(Gallery)/Gallery';
 import Contact from './(Home)/(Contact)/Contact';
