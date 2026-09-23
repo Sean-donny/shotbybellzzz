@@ -77,12 +77,3 @@ body.transition-active {
   will-change: transform;
   overflow: visible;
 }
-
-.hero-bio ::selection {
-  color: rgb(255, 248, 111);
-  background: black;
-}
-
-.hero-bio-text-container {
-  overflow-y: hidden;
-}

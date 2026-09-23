@@ -83,21 +83,27 @@ const Hero = () => {
      * the visitor's reduced-motion preference.
      */
     <MotionConfig reducedMotion="user">
-      <div className="hero-container flex w-full bg-teal-300 px-7 pt-(--header-height,3.5rem) pb-7 lg:min-h-full">
-        {/*
-         * Inner wrapper caps the content width on very wide screens.
-         * `minmax(0, …)` stops long words from blowing out the `fr` tracks.
-         */}
+      <div className="hero-container flex w-full h-auto bg-teal-300 px-7 pt-(--header-height,3.5rem) pb-7 lg:min-h-full">
         <div className="hero-inner mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:gap-8">
           <div className="hero-bio-container flex bg-green-400">
             <div
-              className="hero-bio-text-container flex flex-1 items-center-safe bg-pink-500"
+              className="hero-bio-text-container flex flex-1 items-center-safe selection:bg-pink-500"
               data-animation={animation.mode}
               data-phase={animation.phase}
               data-status={animation.status}
               data-active={animation.isActive}
             >
-              <h1 className="font-cal-sans py-2 text-4xl font-semibold tracking-wide md:text-5xl lg:pb-5 lg:pl-5 lg:text-massive2 lg:leading-massive2">
+              <motion.h1
+                className="font-cal-sans py-2 text-4xl font-semibold tracking-wide md:text-5xl lg:pb-5 lg:pl-5 lg:text-massive2 lg:leading-massive2"
+                initial={animationsEnabled ? { scale: 0 } : false}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: 'spring',
+                  bounce: 0.4,
+                  duration: 0.6,
+                  delay: 0.1,
+                }}
+              >
                 {/*
                  * Semantic content.
                  *
@@ -126,7 +132,7 @@ const Hero = () => {
                     based in England, UK.
                   </span>
                 </span>
-              </h1>
+              </motion.h1>
             </div>
           </div>
 
