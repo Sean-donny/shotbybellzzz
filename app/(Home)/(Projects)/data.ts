@@ -17,6 +17,7 @@ export type ProjectAlbum = {
   projectHeading: string;
   projectDescription: string;
   projectArtwork1: StaticImageData;
+  // projectArtworkAlt: string;
   projectLink: string;
   projectStyling: ProjectStyling;
 };
@@ -206,7 +207,7 @@ export const albumbrandingData: AlbumBranding = {
     accentColor2: '#efd015',
     accentColor3: '#211d1e',
     accentColor4: '#f05c48',
-    backgroundColor: '#583184-to-33-via-#933075-to-66-to-#df7e4c-to-100',
+    backgroundColor: 'linear-to-b/oklch from-#583184 via-#933075 to-#df7e4c',
     primaryFont: '',
     secondaryFont: '',
     tertiaryFont: '',
@@ -297,7 +298,7 @@ export const albumbrandingData: AlbumBranding = {
     accentColor2: '#7a151e',
     accentColor3: '#f8b720',
     accentColor4: '#183f71',
-    backgroundColor: '#dc3b71-to-33-via-#f88456-to-66-to-#2499c0-to-100',
+    backgroundColor: 'linear-to-b/oklch from-#dc3b71 via-#f88456 to-#2499c0',
     primaryFont: '',
     secondaryFont: '',
     tertiaryFont: '',
