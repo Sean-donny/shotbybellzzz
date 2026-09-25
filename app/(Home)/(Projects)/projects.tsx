@@ -1,22 +1,6 @@
 import { StaticImageData } from 'next/image';
 import React from 'react';
-
-export type ProjectStyling = {
-  backgroundColor: string;
-  headingColor: string;
-  paragraphColor: string;
-  accentColor: string;
-  selectionColor: string;
-};
-
-// Add alt info & other missing fields
-export type ProjectAlbum = {
-  projectHeading: string;
-  projectDescription: string;
-  projectArtwork1: StaticImageData;
-  projectLink: string;
-  projectStyling: ProjectStyling;
-};
+import { ProjectAlbum } from './data';
 
 const Projects = () => {
   const ProjectAlbum = (projectAlbumData: ProjectAlbum[]) => {
