@@ -21,6 +21,20 @@ body.transition-active {
   --header-height: 3.5rem;
 }
 
+@utility font-climate-crisis {
+  font-family: 'Climate Crisis', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'YEAR' 1979;
+}
+
+@utility font-boldonese {
+  font-family: 'Boldonse', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @utility font-cal-sans {
   font-family: 'Cal Sans', sans-serif;
   font-weight: 400;
@@ -77,3 +91,21 @@ body.transition-active {
   will-change: transform;
   overflow: visible;
 }
+/* 
+.drop-cap::first-letter {
+  float: left;
+  font-size: 4.4em;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  margin-top: 0.05em;
+}
+@supports (initial-letter: 4) or (-webkit-initial-letter: 4) {
+  .drop-cap::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    margin-top: 0;
+    initial-letter: 4;
+    -webkit-initial-letter: 4;
+  }
+} */

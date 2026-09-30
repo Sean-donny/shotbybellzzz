@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import {
-  Geist,
-  Geist_Mono,
+  Climate_Crisis,
+  Boldonse,
   Cal_Sans,
   Petit_Formal_Script,
   LINE_Seed_JP,
@@ -10,14 +10,15 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const climateCrisis = Climate_Crisis({
+  variable: '--font-climate-crisis',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const boldonese = Boldonse({
+  variable: '--font-boldonese',
   subsets: ['latin'],
+  weight: '400',
 });
 
 const calSans = Cal_Sans({
@@ -51,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${calSans.variable} ${petitFormalScript.variable} ${lineSeedJP.variable} antialiased`}
+        className={`${climateCrisis.variable} ${boldonese.variable} ${calSans.variable} ${petitFormalScript.variable} ${lineSeedJP.variable} antialiased`}
       >
         <Navbar />
         {children}
