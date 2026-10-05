@@ -78,14 +78,14 @@ const Projects = () => {
       style={
         {
           background: s.backgroundColor,
-          '--sel-bg': s.textSelectionBackgroundColor,
-          '--sel-fg': s.textSelectionTextColor,
+          '--sel-bg': s.selectionBackgroundColor,
+          '--sel-fg': s.selectionTextColor,
         } as CSSProperties
       }
     >
       {/* Heading */}
       <h2
-        className={`${headingFont} mx-auto max-w-4xl text-balance text-center text-[clamp(2.25rem,1rem+5vw,5.5rem)] font-semibold leading-[0.95] tracking-tight`}
+        className={`${headingFont} mx-auto max-w-4xl text-balance text-center text-4xl md:text-5xl lg:text-massive2 leading-[0.95] tracking-wide lg:leading-massive2 font-semibold`}
         style={{ color: s.headingColor }}
       >
         {project.projectHeading}
@@ -98,8 +98,8 @@ const Projects = () => {
           <div className="relative isolate mx-auto aspect-square w-full max-w-md md:max-w-none">
             <div
               aria-hidden="true"
-              className="absolute -bottom-[6%] -left-[4%] -z-10 h-[97.5%] w-[97.5%] transition-colors duration-500 md:-bottom-[9%] md:-left-[6%] md:h-[97%] md:w-[97%]"
-              style={{ backgroundColor: s.imageComplimentColor }}
+              className="absolute -bottom-[4%] -left-[3%] -z-10 h-full w-full transition-colors duration-500"
+              style={{ backgroundColor: s.imageBackdropColor }}
             />
             <Image
               src={project.projectArtwork}
@@ -116,8 +116,11 @@ const Projects = () => {
           <div className="flex flex-col justify-between gap-8">
             <p
               lang="en"
-              className={`${bodyFont} text-pretty font-semibold text-[clamp(1rem,0.85rem+0.5vw,1.375rem)] leading-[1.6]`}
-              style={{ color: s.paragraphColor }}
+              className={`${bodyFont} text-pretty font-bold text-[clamp(1rem,0.85rem+0.5vw,1.375rem)] leading-[1.8] p-5`}
+              style={{
+                color: s.paragraphTextColor,
+                backgroundColor: s.paragraphBackgroundColor,
+              }}
             >
               {project.projectDescription}
             </p>

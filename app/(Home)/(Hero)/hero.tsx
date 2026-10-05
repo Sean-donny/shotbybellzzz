@@ -83,9 +83,9 @@ const Hero = () => {
      * the visitor's reduced-motion preference.
      */
     <MotionConfig reducedMotion="user">
-      <div className="hero-container flex w-full h-auto bg-teal-300 px-7 pt-(--header-height,3.5rem) pb-7 lg:min-h-full">
+      <div className="hero-container flex w-full h-auto bg-green-400 px-7 pt-(--header-height,3.5rem) pb-7 lg:min-h-full">
         <div className="hero-inner mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:gap-8">
-          <div className="hero-bio-container flex bg-green-400">
+          <div className="hero-bio-container flex">
             <div
               className="hero-bio-text-container flex flex-1 items-center-safe selection:bg-pink-500"
               data-animation={animation.mode}
