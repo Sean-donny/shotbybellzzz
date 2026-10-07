@@ -91,21 +91,3 @@ body.transition-active {
   will-change: transform;
   overflow: visible;
 }
-/* 
-.drop-cap::first-letter {
-  float: left;
-  font-size: 4.4em;
-  line-height: 0.8;
-  padding-right: 0.5rem;
-  margin-top: 0.05em;
-}
-@supports (initial-letter: 4) or (-webkit-initial-letter: 4) {
-  .drop-cap::first-letter {
-    float: none;
-    font-size: inherit;
-    line-height: inherit;
-    margin-top: 0;
-    initial-letter: 4;
-    -webkit-initial-letter: 4;
-  }
-} */

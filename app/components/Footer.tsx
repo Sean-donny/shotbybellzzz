@@ -18,9 +18,9 @@ const Footer = () => {
     return getCurrentYear().toString();
   };
   return (
-    <footer className="w-full px-5 py-2 z-40 bg-slate-300">
-      <ul className="sm:flex justify-between flex-col-reverse sm:flex-row">
-        <li className="mt-5 sm:flex justify-center items-end sm:mt-0 hidden">
+    <footer className="w-full flex flex-row items-center justify-center px-5 py-2 z-40 bg-green-400">
+      <ul className="flex flex-row items-center justify-center sm:justify-between font-line-jp font-semibold w-full h-auto">
+        <li className="hidden sm:flex justify-center items-center">
           {/** TODO: Replace with designer's icon */}
           <Image
             width={30}
@@ -31,7 +31,7 @@ const Footer = () => {
         </li>
         <li className="flex justify-center items-end">
           <span
-            className="font-line-jp text-gray-600 text-base"
+            className="text-gray-600 text-base"
             title={
               getCurrentYear()
                 ? `2020 was ${getCurrentYear() - 2020} years ago btw`
@@ -41,14 +41,14 @@ const Footer = () => {
             &#169;{getCurrentYearAsString()}
           </span>
           <a
-            className="font-line-jp text-black cursor-pointer text-base ml-6 sm:ml-9 opacity-80 hover:opacity-30"
+            className="text-black cursor-pointer text-base ml-6 sm:ml-9 opacity-80 hover:opacity-30"
             href="https://www.instagram.com/shotbybellzzz/"
             target="_blank"
           >
             Instagram
           </a>
           <a
-            className="font-line-jp text-black cursor-pointer text-base ml-6 sm:ml-9 opacity-80 hover:opacity-30"
+            className="text-black cursor-pointer text-base ml-6 sm:ml-9 opacity-80 hover:opacity-30"
             href="mailto:shotbybellzzz@gmail.com"
             target="_blank"
           >
