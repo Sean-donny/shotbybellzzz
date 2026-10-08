@@ -1,5 +1,5 @@
 'use client';
-
+// image import
 import HeroImage from '@/public/bellzzz_with_the_cam.jpg';
 import Image from 'next/image';
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
@@ -136,7 +136,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image-container p-2 perspective-[1000px]">
+          <div className="hero-image-container md:p-2 perspective-[1000px]">
             <figure
               ref={ref}
               className="hero-image-parent flex h-full items-start justify-center"

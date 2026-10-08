@@ -67,14 +67,14 @@ const Projects = () => {
     'grid size-11 place-items-center rounded-full transition-transform hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 md:size-14 lg:size-[4.5rem]';
 
   const ctaClass =
-    bodyFont +
+    ctaFont +
     ' ' +
     'inline-block px-6 py-3 text-base font-semibold tracking-wide transition-transform hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 md:px-8 md:py-4 md:text-lg lg:px-10';
 
   return (
     <section
       aria-label="Projects"
-      className="flex min-h-dvh w-full flex-col gap-8 px-6 py-8 transition-colors duration-500 selection:bg-(--sel-bg) selection:text-(--sel-fg) md:gap-10 md:px-10 md:py-12"
+      className="flex min-h-dvh w-full flex-col gap-8 px-7 py-8 transition-colors duration-500 selection:bg-(--sel-bg) selection:text-(--sel-fg) md:gap-10 md:px-10 md:py-12"
       style={
         {
           background: s.backgroundColor,
