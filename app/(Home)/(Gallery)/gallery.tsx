@@ -8,34 +8,36 @@ import {
   useState,
 } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import InstantFilm, { CustomAspectRatio } from '@/app/components/InstantFilm';
+import { GalleryInstantPhotoDetail, gallerySectionImageData } from './data';
 
-const temp = {
-  1: 'One',
-  2: 'Two',
-  3: 'Three',
-  4: 'Four',
-  5: 'Five',
-  6: 'Six',
-  7: 'Seven',
-  8: 'Eight',
-  9: 'Nine',
-  10: 'Ten',
-  11: 'Eleven',
-  12: 'Twelve',
-  13: 'Thirteen',
-  14: 'Fourteen',
-  15: 'Fifteen',
-  16: 'Sixteen',
-  17: 'Seventeen',
-  18: 'Eighteen',
-  19: 'Nineteen',
-  20: 'Twenty',
-  21: 'Twenty One',
-  22: 'Twenty Two',
-  23: 'Twenty Three',
-  24: 'Twenty Four',
-  25: 'Twenty Five',
-};
+// const temp = {
+//   1: 'One',
+//   2: 'Two',
+//   3: 'Three',
+//   4: 'Four',
+//   5: 'Five',
+//   6: 'Six',
+//   7: 'Seven',
+//   8: 'Eight',
+//   9: 'Nine',
+//   10: 'Ten',
+//   11: 'Eleven',
+//   12: 'Twelve',
+//   13: 'Thirteen',
+//   14: 'Fourteen',
+//   15: 'Fifteen',
+//   16: 'Sixteen',
+//   17: 'Seventeen',
+//   18: 'Eighteen',
+//   19: 'Nineteen',
+//   20: 'Twenty',
+//   21: 'Twenty One',
+//   22: 'Twenty Two',
+//   23: 'Twenty Three',
+//   24: 'Twenty Four',
+//   25: 'Twenty Five',
+// };
 
 type Rect = {
   left: number;
@@ -52,11 +54,26 @@ type GalleryItemHandle = {
 
 type GalleryItemProps = {
   id: string;
-  text: string;
+  data: GalleryInstantPhotoDetail;
+  index: number;
+  width: number;
+};
+
+const selectInstantFilmAspectRatio = (index: number) => {
+  const aspectRatios: CustomAspectRatio[] = [
+    'INSTAXSQUARE',
+    'POLAROIDGO',
+    'POLAROIDITYPE',
+  ];
+
+  if (index > -1) {
+    return aspectRatios[index % 3];
+  }
+  return aspectRatios[0];
 };
 
 const GalleryItem = forwardRef<GalleryItemHandle, GalleryItemProps>(
-  ({ id, text }, ref) => {
+  ({ id, data, index, width }, ref) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     const rectRef = useRef<Rect | null>(null);
@@ -165,15 +182,22 @@ const GalleryItem = forwardRef<GalleryItemHandle, GalleryItemProps>(
     return (
       <div
         ref={containerRef}
-        className="bg-amber-600 w-full h-60 flex items-center justify-center p-5"
+        className="gallery-home-section-instant-film-parent w-fit flex items-center justify-center bg-amber-500"
       >
         <motion.div
-          className="bg-green-400 w-full h-full grid place-items-center"
+          className="w-fit h-fit grid place-items-center cursor-pointer bg-blue-500"
           style={{
             scale: smoothScale,
           }}
+          id={id}
         >
-          {text}
+          <InstantFilm
+            image={data.src}
+            alt={data.alt}
+            title={data.title}
+            width={width}
+            aspectRatio={selectInstantFilmAspectRatio(index)}
+          />
         </motion.div>
       </div>
     );
@@ -184,6 +208,21 @@ GalleryItem.displayName = 'GalleryItem';
 
 const Gallery = () => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [instantFilmSize, setInstantFilmSize] = useState<number | null>(null);
+  const GALLERY_SIZE = Object.entries(gallerySectionImageData).length;
+
+  useEffect(() => {
+    const determineInstantFilmSize = () => {
+      setInstantFilmSize(window.innerWidth >= 720 ? 160 : 100);
+    };
+
+    determineInstantFilmSize();
+    window.addEventListener('resize', determineInstantFilmSize);
+
+    return () => {
+      window.removeEventListener('resize', determineInstantFilmSize);
+    };
+  }, []);
 
   const itemRefs = useRef<Record<string, GalleryItemHandle | null>>({});
 
@@ -378,18 +417,23 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen p-7 bg-purple-300 flex">
-      <div className="bg-fuchsia-400 w-full grid grid-cols-[repeat(auto-fit,minmax(12.5rem,1fr))] gap-8 items-center justify-items-center">
-        {Object.entries(temp).map(([key, item]) => (
-          <GalleryItem
-            key={key}
-            id={key}
-            text={item}
-            ref={element => {
-              itemRefs.current[key] = element;
-            }}
-          />
-        ))}
+    <div className="w-full h-fit p-7 bg-black-300 flex bg-green-400">
+      <div className="gallery-home-section-parent max-w-7xl bg-fuchsia-400">
+        {instantFilmSize !== null &&
+          Object.entries(gallerySectionImageData)
+            .slice(0, instantFilmSize == 100 ? 10 : GALLERY_SIZE)
+            .map(([key, data], index) => (
+              <GalleryItem
+                key={key}
+                id={key}
+                data={data}
+                index={index}
+                width={instantFilmSize}
+                ref={element => {
+                  itemRefs.current[key] = element;
+                }}
+              />
+            ))}
       </div>
     </div>
   );

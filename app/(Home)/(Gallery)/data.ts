@@ -4,33 +4,26 @@ import galleryImage2 from '@/public/bellzzz_with_the_cam.jpg';
 import { StaticImageData } from 'next/image';
 
 export type CameraInfo = {
-  format: string;
-  iso: string;
-  aperture: string;
-  shutterSpeed: string;
-  sensorSize: string;
-  lens: string;
-  camera: string;
+  format?: string;
+  iso?: string;
+  aperture?: string;
+  shutterSpeed?: string;
+  sensorSize?: string;
+  lens?: string;
+  camera?: string;
 };
 
-type GalleryInstantPhoto = {
-  [key: string]: {
-    src: StaticImageData;
-    alt: string;
-    title: string;
-    year: string;
-    description: string;
-    cameraInfo: CameraInfo;
-  };
-};
-
-type GalleryInstantPhotoDetail = {
+export type GalleryInstantPhotoDetail = {
   src: StaticImageData;
   alt: string;
   title: string;
-  year: string;
-  description: string;
-  cameraInfo: CameraInfo;
+  year?: string;
+  description?: string;
+  cameraInfo?: CameraInfo;
+};
+
+export type GalleryInstantPhoto = {
+  [key: string]: GalleryInstantPhotoDetail;
 };
 
 export const gallerySectionImageData: GalleryInstantPhoto = {
@@ -51,6 +44,374 @@ export const gallerySectionImageData: GalleryInstantPhoto = {
     },
   },
   image2: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image3: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image4: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image5: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image6: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image7: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image8: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image9: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image10: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image11: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image12: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image13: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image14: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image15: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image16: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image17: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image18: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image19: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image20: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image21: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image22: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image23: {
+    src: galleryImage1,
+    alt: 'tyra by the lake looking piercingly at the viewer',
+    title: 'Lake Side',
+    year: '2025',
+    description: 'Tyra by the lake looking piercingly at the viewer',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image24: {
+    src: galleryImage2,
+    alt: 'bellzzz holding a camera',
+    title: 'The Photographer',
+    year: '2025',
+    description: 'Bellzzz holding a camera',
+    cameraInfo: {
+      format: 'digital',
+      iso: '200',
+      aperture: '1.4',
+      shutterSpeed: '1/250',
+      sensorSize: '48',
+      lens: 'Sigma 16mm f/1.4 DC DN Contemporary',
+      camera: 'Fujifilm X-M5',
+    },
+  },
+  image25: {
     src: galleryImage2,
     alt: 'bellzzz holding a camera',
     title: 'The Photographer',

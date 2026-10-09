@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 
-type CustomAspectRatio =
+export type CustomAspectRatio =
   | 'INSTAXMINI'
   | 'INSTAXSQUARE'
   | 'POLAROIDGO'

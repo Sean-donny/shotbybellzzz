@@ -250,18 +250,6 @@ export type ProjectStyling = {
   paragraphBodyFont?: string;
 };
 
-export type ProjectAlbum = {
-  [key in AlbumNames]: {
-    projectHeading: string;
-    projectDescription: string;
-    projectArtwork: StaticImageData;
-    projectArtworkAlt: string;
-    projectArtworkTitle: string;
-    projectLink: string;
-    projectStyling: ProjectStyling;
-  };
-};
-
 export type ProjectAlbumDetail = {
   projectHeading: string;
   projectDescription: string;
@@ -270,6 +258,10 @@ export type ProjectAlbumDetail = {
   projectArtworkTitle: string;
   projectLink: string;
   projectStyling: ProjectStyling;
+};
+
+export type ProjectAlbum = {
+  [key in AlbumNames]: ProjectAlbumDetail;
 };
 
 export const projectAlbumData: ProjectAlbum = {
